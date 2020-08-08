@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { IAppState } from 'src/app/store/state/app.state';
 import { RemoveNote } from 'src/app/store/actions/note.actions';
-import { removeNote } from 'src/app/store/selectors/note.selector';
 
 @Component({
   selector: 'app-note-item',
@@ -28,8 +27,6 @@ export class NoteItemComponent implements OnInit {
 
   onRemove() {
     this.store.dispatch(new RemoveNote(this.note.id));
-
-    this.store.pipe(select(removeNote));
   }
   
 }

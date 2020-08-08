@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { IAppState } from 'src/app/store/state/app.state';
 import { GetNote, RemoveNote, UpdateNote } from 'src/app/store/actions/note.actions';
-import { selectSelectedNote, removeNote, updateNote } from 'src/app/store/selectors/note.selector';
+import { selectSelectedNote } from 'src/app/store/selectors/note.selector';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
@@ -61,7 +61,6 @@ export class NoteShowComponent implements OnInit {
     this.updatedNote = this.updateForm.value;
 
     this._store.dispatch(new UpdateNote(this.updatedNote));
-    this._store.pipe(select(updateNote));
     alert('Was saved!');
   }
 
@@ -77,7 +76,6 @@ export class NoteShowComponent implements OnInit {
 
   onRemove() {
     this._store.dispatch(new RemoveNote(this.id));
-    this._store.pipe(select(removeNote));
     this.router.navigate(['/home']);
   }
 

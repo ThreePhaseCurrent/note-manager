@@ -5,7 +5,6 @@ import { IAppState } from 'src/app/store/state/app.state';
 import { Note } from 'src/app/models/note';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CreateNote } from 'src/app/store/actions/note.actions';
-import { createNote } from 'src/app/store/selectors/note.selector';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -45,9 +44,7 @@ export class CreateNoteComponent implements OnInit {
     this.note.isActual = true;
 
     this.store.dispatch(new CreateNote(this.note));
-    this.store.pipe(select(createNote)).subscribe(x => {
-      this.dialogRef.close();
-    });
+    this.dialogRef.close();
   }
 
   onCancel(){

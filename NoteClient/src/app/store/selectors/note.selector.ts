@@ -13,18 +13,3 @@ export const selectSelectedNote = createSelector(
     selectNotes,
     (state: INoteState) => state.selectedNote
 )
-
-export const removeNote = createSelector(
-    selectNotes,
-    (state: INoteState) => true
-)
-
-export const createNote = createSelector(
-    selectNotes,
-    () => true
-)
-
-export const updateNote = createSelector(
-    selectNotes,
-    () => true
-)
