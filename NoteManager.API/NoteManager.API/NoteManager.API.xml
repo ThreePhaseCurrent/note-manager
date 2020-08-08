@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NoteManager.API</name>
+    </assembly>
+    <members>
+        <member name="M:NoteManager.API.Extensions.ServiceCollectionExtensions.AddServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register services
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:NoteManager.API.Models.NoteViewParameters">
+            <summary>
+            Parameters for pagination note
+            </summary>
+        </member>
+    </members>
+</doc>

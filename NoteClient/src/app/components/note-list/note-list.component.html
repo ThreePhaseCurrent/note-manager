@@ -1,0 +1,12 @@
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+
+  <div fxFlex *ngFor='let note of notes'>
+    <app-note-item [note]="note"></app-note-item>
+  </div>
+  
+</div>

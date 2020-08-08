@@ -1,0 +1,12 @@
+<mat-card class="note-card">
+    <mat-card-header>
+        <mat-card-title fxLayoutAlign="center">{{note.title}}</mat-card-title>
+        <mat-card-subtitle><span i18n>Created:</span> {{note.dateInit | date :'short' }}</mat-card-subtitle>
+        <mat-card-subtitle><span i18n>Last updated:</span> {{note.dateUpdate | date :'short' }}</mat-card-subtitle>
+    </mat-card-header>
+
+      <mat-card-actions fxLayoutAlign="center">
+        <button id='btn-show' mat-raised-button color="primary" (click)='onClick()' i18n>Show</button>
+        <button class="btn-remove" mat-raised-button color="warn" (click)='onRemove()' i18n>Remove</button>
+      </mat-card-actions>
+</mat-card>
